@@ -16,7 +16,7 @@ public class MainMagic {
         MagicRequest magicRequest;
 
         @Autowired
-    LabelService labelService;
+        LabelService labelService;
 
 
         // Define a GET endpoint
