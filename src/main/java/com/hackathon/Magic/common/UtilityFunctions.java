@@ -13,11 +13,11 @@ import java.util.Map;
 public class UtilityFunctions {
 
 	@SuppressWarnings("unchecked")
-	public static Map<String, Object> getMasterDataFromJson(String jsonFile) {
+	public static Map<String, String> getMasterDataFromJson(String jsonFile) {
 		try {
 			String calsString = convertToString(jsonFile);
 			ObjectMapper jsonMapper = new ObjectMapper();
-			return (Map<String, Object>) jsonMapper.readValue(calsString, Map.class);
+			return (Map<String, String>) jsonMapper.readValue(calsString, Map.class);
 		} catch (IOException ex) {
 //				log.error("Unsupported Encoding Exception : ", ex);
 			ex.printStackTrace();

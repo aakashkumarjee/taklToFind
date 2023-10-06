@@ -22,4 +22,5 @@ public class MagicRequest {
     public JSONObject generateLabels(MagicRequest request) {
         return null;
     }
+
 }

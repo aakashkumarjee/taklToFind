@@ -1,9 +1,12 @@
 package com.hackathon.Magic.apis;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.hackathon.Magic.dtos.MagicRequest;
 import com.hackathon.Magic.services.HttpChannel;
 import com.hackathon.Magic.services.LabelService;
+import com.hackathon.Magic.services.MagicService;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,13 +16,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @Slf4j
 public class MainMagic {
 
     @Autowired
-    MagicRequest magicRequest;
+    MagicService magicService;
 
     @Autowired
     HttpChannel httpChannel;
@@ -27,9 +31,38 @@ public class MainMagic {
     @Autowired
     LabelService labelService;
 
+    ObjectMapper objectMapper = new ObjectMapper();
+
     @PostMapping("/magic-api/generate-keywords")
-    public HashMap<String, String> generateKeywords(@RequestBody MagicRequest request) {
-        JSONObject jsonObject = magicRequest.generateLabels(request);
+    public HashMap<String, String> generateKeywords(@RequestBody MagicRequest request) throws IOException {
+        log.error("Input: {}",request.getTextInput());
+        log.error("Input: {}",request);
+        HashMap<String, String> map = magicService.generateLabels(request);
+
+
+        log.error("Old Map: {}", map);
+        Map<String, String> newMap = new HashMap<>();
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+            String stringValue = String.valueOf(value); // Convert Integer to String
+            newMap.put(key, stringValue);
+        }
+
+        log.error("New Map: {}", newMap);
+
+
+
+        String out = new Gson().toJson(newMap);
+        HashMap<String, String> resultMap = new HashMap<>();
+        resultMap.put("KUCHBHI",out);
+        log.error("output: {}",resultMap);
+        return resultMap;
+//        return formatOutput(output).toString();
+    }
+    @PostMapping("/magic-api/generate-keywords-test")
+    public HashMap<String, String> generateKeywordsTest(@RequestBody MagicRequest request) {
+        JSONObject jsonObject = magicService.generateLabelsTest(request);
         log.error("Input: {}",request.getTextInput());
         log.error("Input: {}",request);
         JSONObject output = labelService.mapResponse(jsonObject);
@@ -59,9 +92,21 @@ public class MainMagic {
     @PostMapping("/magic-api/gen-api")
     public String getResponse(String prompt) throws IOException {
 //        return httpChannel.genAiApi(prompt);
-        return httpChannel.genAiApiTest(prompt);
+        String text =  httpChannel.genAiApiTest(prompt);
+
+        System.out.println(text);
+        return convertToHashmap(text).toString();
     }
 
+    public HashMap<String, Object> convertToHashmap(String jsonString) throws JsonProcessingException {
+        int firstBraceIndex = jsonString.indexOf("{");
+        int lastBraceIndex = jsonString.lastIndexOf("}");
 
 
+// Extract the JSON content between the first and last braces
+        String trimmedJson = jsonString.substring(firstBraceIndex, lastBraceIndex + 1);
+
+        HashMap<String, Object> hashMap = objectMapper.readValue(trimmedJson, HashMap.class);
+        return hashMap;
+    }
 }
