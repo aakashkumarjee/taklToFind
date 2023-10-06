@@ -15,7 +15,7 @@ import java.util.List;
 @Component
 public class MagicRequest {
     String textInput;
-    List<String> labels;
+    String labels;
     String base64EncodedVoiceInput = "";
 
 
