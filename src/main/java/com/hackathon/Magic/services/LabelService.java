@@ -7,9 +7,11 @@ import org.springframework.stereotype.Service;
 public class LabelService {
     public JSONObject mapResponse(JSONObject jsonObject) {
         JSONObject json = new JSONObject();
-        json.put("maritalStatus", "N");
-        json.put("income", "2");
-        json.put("occupation", "29");
+        JSONObject data = new JSONObject();
+        data.put("maritalStatus", "N");
+        data.put("income", "2");
+        data.put("occupation", "29");
+        json.put("data", data);
         return json;
     }
 }
