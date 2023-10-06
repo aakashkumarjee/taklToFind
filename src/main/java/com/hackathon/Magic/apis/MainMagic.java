@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+
 @RestController
 public class MainMagic {
 
@@ -26,10 +28,20 @@ public class MainMagic {
         }
 
         @PostMapping("/magic-api/generate-keywords")
-        public JSONObject generateKeywords(@RequestBody MagicRequest request) {
+        public HashMap<String, Object> generateKeywords(@RequestBody MagicRequest request) {
             JSONObject jsonObject = magicRequest.generateLabels(request);
             JSONObject output = labelService.mapResponse(jsonObject);
-            return output;
+            return formatOutput(output);
+        }
+        private HashMap<String,Object> formatOutput(JSONObject jsonObject){
+            HashMap<String, Object> resultMap = new HashMap<>();
+
+            // Assuming you have keys and values in your JSONObject
+            for (String key : jsonObject.keySet()) {
+                resultMap.put(key, jsonObject.get(key));
+            }
+
+            return resultMap;
         }
 
 }
