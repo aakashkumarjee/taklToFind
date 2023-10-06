@@ -1,0 +1,111 @@
+{
+  "height": {
+    "4' 0\"": "1",
+    "4' 1\"": "2",
+    "4' 2\"": "3",
+    "4' 3\"": "4",
+    "4' 4\"": "5",
+    "4' 5\"": "6",
+    "4' 6\"": "7",
+    "4' 7\"": "8",
+    "4' 8\"": "9",
+    "4' 9\"": "10"
+  },
+  "maritalStatus": {
+    "Annulled": "A",
+    "Awaiting Divorce": "S",
+    "Divorced": "D",
+    "Widowed": "W",
+    "Married": "M",
+    "Never Married": "N"
+  },
+  "religion": {
+    "Hindu": "1",
+    "Muslim": "2",
+    "Christian": "3",
+    "Sikh": "4",
+    "Parsi": "5",
+    "Jewish": "6",
+    "Buddhist": "7",
+    "Other": "8",
+    "Jain": "9",
+    "Bahai": "10"
+  },
+  "mTongue": {
+    "Foreign origin": "1",
+    "Nicobarese": "2",
+    "Telugu": "3",
+    "Aurnachali": "4",
+    "Assamese": "5",
+    "Bengali": "6",
+    "Hindi-Bihar/Jharkhand": "7",
+    "Hindi-Delhi": "10"
+  },
+  "income" : {
+    "Rs. 0 - 1 Lakh": "2",
+    "Rs. 1 - 2 Lakh": "3",
+    "Rs. 2 - 3 Lakh": "4",
+    "Rs. 3 - 4 Lakh": "5",
+    "Rs. 4 - 5 Lakh": "6",
+    "Under $25,000": "8",
+    "$25,001 - 40,000": "9",
+    "$40,001 - 60,000": "10",
+    "$60,001 - 80,000": "11",
+    "$80,001 - 100,000": "12",
+    "$100,001 - 150,000": "13",
+    "$200,001 and above": "14",
+    "No Income": "15",
+    "Rs. 5 - 7.5 Lakh": "16"
+  },
+  "country" : {
+    "Afghanistan": "1",
+    "Albania": "2",
+    "Algeria": "3",
+    "Angola": "4",
+    "Argentina": "5",
+    "Armenia": "6",
+    "Australia": "7",
+    "Austria": "8",
+    "Bahamas": "9",
+    "Bahrain": "10",
+    "Bangladesh": "11",
+    "India": "51"
+  },
+  "residencyStatus" : {
+    "Citizen": "1",
+    "Permanent Resident": "2",
+    "Work Permit": "3",
+    "Student Visa": "4",
+    "Temporary Visa": "5"
+  },
+  "diet" : {
+    "Eggetarian": "E",
+    "Vegetarian": "V",
+    "Jain": "J",
+    "Non Vegetarian": "N"
+  },
+  "education" : {
+    "B.A": "1",
+    "B.Com": "2",
+    "B.E/B.Tech": "3",
+    "B.Pharma": "4",
+    "B.Sc": "5",
+    "L.L.B": "6",
+    "CA": "7",
+    "CS": "8",
+    "Diploma": "9",
+    "ICWA": "10"
+  },
+  "occupation" : {
+    "Accounting Professional New 2": "1",
+    "Advertising Professional": "2",
+    "Agent": "3",
+    "Actor/Model": "5",
+    "Architect": "6",
+    "Banking Professional": "7",
+    "BPO/ITes Professional": "8",
+    "Journalist": "9",
+    "Corporate Communication": "10",
+    "Software Professional": "20"
+  }
+}
