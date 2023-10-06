@@ -70,7 +70,7 @@ public class MagicService {
     public HashMap<String,String> generateLabels(MagicRequest request) throws IOException {
         HashMap<String,String> text = new HashMap<>();
         try{
-            String prompt = request.getTextInput() + "read the text Just Before & extract the data from this. label values can be - maritalStatus, religion, cast, mTongue,income, country, residencyStatus, diet, education, occupation, height  .  get me output in key value pair and in json, remove the labels without any value.  the output should be plain json and nothing else. Keep in mind. Also please don't give gender, IT IS NOT REQUIRED";
+            String prompt = request.getTextInput() + "read the text Just Before & extract the data from this. label values can be - maritalStatus, religion, cast, mTongue,income, country, residencyStatus, diet, education, occupation, height  .  get me output in key value pair and in json, remove the labels without any value.  the output should be plain json and nothing else. Keep in mind.";
             text = getResponse(prompt);
         }catch (Exception e){
             log.error("Got Exception while extracting labels: {}", request, e);

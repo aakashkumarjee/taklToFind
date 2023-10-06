@@ -34,7 +34,7 @@ public class MainMagic {
     ObjectMapper objectMapper = new ObjectMapper();
 
     @PostMapping("/magic-api/generate-keywords")
-    public HashMap<String, String> generateKeywords(@RequestBody MagicRequest request) throws IOException {
+    public HashMap<String, Object> generateKeywords(@RequestBody MagicRequest request) throws IOException {
         log.error("Input: {}",request.getTextInput());
         log.error("Input: {}",request);
         HashMap<String, String> map = magicService.generateLabels(request);
@@ -45,6 +45,9 @@ public class MainMagic {
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();
+            if(value ==  null){
+                continue;
+            }
             String stringValue = String.valueOf(value); // Convert Integer to String
             newMap.put(key, stringValue);
         }
@@ -52,23 +55,31 @@ public class MainMagic {
         log.error("New Map: {}", newMap);
 
 
+        JSONObject data = new JSONObject();
 
-        String out = new Gson().toJson(newMap);
-        HashMap<String, String> resultMap = new HashMap<>();
+        for (Map.Entry<String, String> entry : newMap.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            data.put(key, value);
+        }
+
+        String out = new Gson().toJson(data);
+        HashMap<String, Object> resultMap = new HashMap<>();
         resultMap.put("KUCHBHI",out);
         log.error("output: {}",resultMap);
         return resultMap;
 //        return formatOutput(output).toString();
     }
-    @PostMapping("/magic-api/generate-keywords-test")
+    @PostMapping("/magic-api/generate-keywords-1")
     public HashMap<String, String> generateKeywordsTest(@RequestBody MagicRequest request) {
-        JSONObject jsonObject = magicService.generateLabelsTest(request);
         log.error("Input: {}",request.getTextInput());
         log.error("Input: {}",request);
+        JSONObject jsonObject = magicService.generateLabelsTest(request);
         JSONObject output = labelService.mapResponse(jsonObject);
         String out = new Gson().toJson(output);
         HashMap<String, String> resultMap = new HashMap<>();
         resultMap.put("KUCHBHI",out);
+        log.error("output: {}",resultMap);
         return resultMap;
 //        return formatOutput(output).toString();
     }
