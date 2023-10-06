@@ -1,0 +1,112 @@
+{
+  "height": {
+    "1": "4' 0\"",
+    "2": "4' 1\"",
+    "3": "4' 2\"",
+    "4": "4' 3\"",
+    "5": "4' 4\"",
+    "6": "4' 5\"",
+    "7": "4' 6\"",
+    "8": "4' 7\"",
+    "9": "4' 8\"",
+    "10": "4' 9\""
+  },
+  "maritalStatus": {
+    "A": "Annulled",
+    "S": "Awaiting Divorce",
+    "D": "Divorced",
+    "W": "Widowed",
+    "M": "Married",
+    "N": "Never Married"
+  },
+  "religion": {
+    "1": "Hindu",
+    "2": "Muslim",
+    "3": "Christian",
+    "4": "Sikh",
+    "5": "Parsi",
+    "6": "Jewish",
+    "7": "Buddhist",
+    "8": "Other",
+    "9": "Jain",
+    "10": "Bahai"
+  },
+  "mTongue": {
+    "1": "Foreign origin",
+    "2": "Nicobarese",
+    "3": "Telugu",
+    "4": "Aurnachali",
+    "5": "Assamese",
+    "6": "Bengali",
+    "7": "Hindi-Bihar/Jharkhand",
+    "10": "Hindi-Delhi"
+  },
+  "income" : {
+    "2": "Rs. 0 - 1 Lakh",
+    "3": "Rs. 1 - 2 Lakh",
+    "4": "Rs. 2 - 3 Lakh",
+    "5": "Rs. 3 - 4 Lakh",
+    "6": "Rs. 4 - 5 Lakh",
+    "8": "Under $25,000",
+    "9": "$25,001 - 40,000",
+    "10": "$40,001 - 60,000",
+    "11": "$60,001 - 80,000",
+    "12": "$80,001 - 100,000",
+    "13": "$100,001 - 150,000",
+    "14": "$200,001 and above",
+    "15": "No Income",
+    "16": "Rs. 5 - 7.5 Lakh"
+  },
+  "country" : {
+    "1": "Afghanistan",
+    "2": "Albania",
+    "3": "Algeria",
+    "4": "Angola",
+    "5": "Argentina",
+    "6": "Armenia",
+    "7": "Australia",
+    "8": "Austria",
+    "9": "Bahamas",
+    "10": "Bahrain",
+    "11": "Bangladesh",
+    "51": "India"
+  },
+  "residencyStatus" : {
+    "1": "Citizen",
+    "2": "Permanent Resident",
+    "3": "Work Permit",
+    "4": "Student Visa",
+    "5": "Temporary Visa"
+  },
+  "diet" :   {
+    "1": "Citizen",
+    "2": "Permanent Resident",
+    "3": "Work Permit",
+    "4": "Student Visa",
+    "5": "Temporary Visa"
+  },
+  "education" : {
+    "1": "B.A",
+    "2": "B.Com",
+    "3": "B.E/B.Tech",
+    "4": "B.Pharma",
+    "5": "B.Sc",
+    "6": "L.L.B",
+    "7": "CA",
+    "8": "CS",
+    "9": "Diploma",
+    "10": "ICWA"
+  },
+  "occupation" : {
+    "1": "Accounting Professional New 2",
+    "2": "Advertising Professional",
+    "3": "Agent",
+    "5": "Actor/Model",
+    "6": "Architect",
+    "7": "Banking Professional",
+    "8": "BPO/ITes Professional",
+    "9": "Journalist",
+    "10": "Corporate Communication",
+    "20" : "Software Professional"
+  }
+}
